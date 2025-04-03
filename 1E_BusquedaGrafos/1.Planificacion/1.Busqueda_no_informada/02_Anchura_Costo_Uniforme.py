@@ -1,16 +1,16 @@
 import heapq
 
 def uniform_cost_search(graph, start, goal):
-    #Se crea una fila prority a visitar
+    # Se crea una fila prority a visitar
     priority_queue = [(0, start)] 
     costs = {start: 0} #Directorio registro costos
     visited = set() #Directorio de registro de nodos visitados
 
     while priority_queue:
-        #Nodo con el costo más bajo
+        # Nodo con el costo más bajo
         current_cost, node = heapq.heappop(priority_queue)
 
-        # Si alcanzamos el nodo objetivo, devolvemos el costo acumulado
+        # Se alcanza el nodo objetivo, devuelve costo acumulado
         if node == goal:
             return current_cost
 
@@ -18,19 +18,19 @@ def uniform_cost_search(graph, start, goal):
         if node not in visited:
             visited.add(node)
 
-            # Exploramos los vecinos del nodo actual
+            # Explora los vecinos del nodo actual
             for neighbor, cost in graph[node]:
                 new_cost = current_cost + cost
-                # Si encontramos un camino más barato para llegar a este vecino
+                # Si encontramos un camino cercano para llegar a este vecino
                 if neighbor not in costs or new_cost < costs[neighbor]:
                     costs[neighbor] = new_cost
-                    # Agregamos el vecino a la cola de prioridad con el nuevo costo
+                    # Se agrega el vecino a la cola de priority con nueva cercania
                     heapq.heappush(priority_queue, (new_cost, neighbor))
 
-    # Si no encontramos el nodo objetivo, devolvemos infinito
+    # Si no encontramos el nodo objetivo, devuelve infinito
     return float('inf')
 
-# Ejemplo de grafo representado como un diccionario de listas de tuplas (nodo, costo)
+# Ejemplo de grafo como un diccionario de listas de tuplas (nodo, costo)
 graph = {
     'A': [('B', 1), ('C', 4)],
     'B': [('A', 1), ('D', 2), ('E', 5)],

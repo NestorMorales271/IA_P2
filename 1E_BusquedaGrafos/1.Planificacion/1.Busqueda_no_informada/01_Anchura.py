@@ -7,7 +7,7 @@ def bfs(graph, start):
 while queue:
     node = queue.popleft() #Se determina un nodo de la lista de espera
 
-    #Si el nodo no fue visitado, se visita
+    # Si el nodo no fue visitado, se visita
     if node not in visited:
         print("Visitando nodo: {node}")
         visited.add(node) #Se marca su visita
@@ -24,5 +24,5 @@ graph = {
     'E': ['B','F'],
     'F': ['C','E']
 }
-#Se ejecuta la busqueda con el nodo A
+# Se ejecuta la busqueda con el nodo A
 bfs(graph, 'A')
