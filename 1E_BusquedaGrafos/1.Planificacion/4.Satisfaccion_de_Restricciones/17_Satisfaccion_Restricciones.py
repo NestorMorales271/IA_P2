@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+# Se define la clase grafo con vertices
 class Graph:
     def __init__(self, vertices):
         self.vertices = vertices
@@ -9,12 +10,14 @@ class Graph:
         self.graph[u].append(v)
         self.graph[v].append(u)
 
+# detecta restriccion segura
 def is_safe(graph, vertex, color, colors):
     for neighbor in graph.graph[vertex]:
         if colors[neighbor] == color:
             return False
     return True
 
+# Coloreo del grafo
 def graph_coloring(graph, m, vertex=0):
     if vertex == graph.vertices:
         return True
