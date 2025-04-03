@@ -1,8 +1,7 @@
 import heapq
 
 def heuristic(node, goal):
-    # Ejemplo de heurística: distancia de Manhattan (para una cuadrícula)
-    # Esto debe ser reemplazado por una heurística adecuada para tu problema
+    # Ejemplo de heurística:
     return abs(node[0] - goal[0]) + abs(node[1] - goal[1])
 
 def greedy_best_first_search(graph, start, goal):

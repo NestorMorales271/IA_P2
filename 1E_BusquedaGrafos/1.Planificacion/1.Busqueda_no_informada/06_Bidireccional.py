@@ -1,5 +1,6 @@
 from collections import deque
 
+# busqueda bidireccional
 def bidirectional_search(graph, start, goal):
     if start == goal:
         return [start]
@@ -25,6 +26,7 @@ def bidirectional_search(graph, start, goal):
 
     return None
 
+# iteracion para buscar vecinos
 def expand_level(graph, queue, visited, other_visited):
     for _ in range(len(queue)):
         node, path = queue.popleft()

@@ -1,7 +1,7 @@
 import heapq
 
 def heuristic(node, goal):
-    # Ejemplo de heurística: distancia de Manhattan (para una cuadrícula)
+    # Ejemplo de heurística: 
     return abs(node[0] - goal[0]) + abs(node[1] - goal[1])
 
 def a_star_search(graph, start, goal):

@@ -1,11 +1,11 @@
 def dfs_limited(graph, start, goal, depth_limit):
-    # Creamos una pila para mantener el orden de los nodos a visitar
+    # Creamos una fila para mantener el orden de los nodos a visitar
     stack = [(start, [start], 0)]
     # Creamos un conjunto para mantener el registro de los nodos visitados
     visited = set()
 
     while stack:
-        # Sacamos el nodo de la parte superior de la pila
+        # Sacamos el nodo de la parte superior de la fila
         (node, path, depth) = stack.pop()
 
         # Si alcanzamos el nodo objetivo, devolvemos el camino
@@ -16,7 +16,7 @@ def dfs_limited(graph, start, goal, depth_limit):
         if node not in visited and depth < depth_limit:
             visited.add(node)
 
-            # Agregamos todos los vecinos no visitados a la pila
+            # Agregamos todos los vecinos no visitados a la fila
             for neighbor in graph[node]:
                 if neighbor not in visited:
                     stack.append((neighbor, path + [neighbor], depth + 1))
