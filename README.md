@@ -1,4 +1,5 @@
 # IA_P2
+![Titulo Representativo: "Explora las IA"](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ikusi.com%2Fwp-content%2Fuploads%2F2023%2F02%2Fmongeralaegon_mongeralaegon_image_823.jpg)
 ---
 # Exploración y Experimentación en Inteligencia Artificial
 
